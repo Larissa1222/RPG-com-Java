@@ -1,0 +1,190 @@
+import java.util.Scanner;
+public class NewMain {
+
+    public static void main(String[] args) {
+        int classe;
+        String name;
+        int quest;
+        int HP;
+
+        System.out.println("===================================");
+        System.out.println("Seja bem-vindo as terras de toyrus");
+        System.out.println("===================================");
+        System.out.println("");
+
+        System.out.println("Escolha uma classe aventureiro:");
+        System.out.println("");
+
+        System.out.println("Mago:");
+        System.out.println("HP: 15");
+        System.out.println("Dano: 1d20 + 5");
+        System.out.println("");
+
+        System.out.println("Guerreiro:");
+        System.out.println("HP: 25");
+        System.out.println("Dano: 1d10 + 2");
+        System.out.println("");
+
+        Scanner read = new Scanner(System.in);
+        do{
+        System.out.println("Digite 1 para mago e 2 para guerreiro");
+        classe = read.nextInt();
+        if(classe >=1 && classe <=2){
+            break;
+             }
+        System.out.println("valor invalido, tente novamente");
+        }
+        while(true);
+
+        if(classe == 1){
+        HP = 15;
+    }
+        else{
+        HP = 25;
+    }
+
+        System.out.println("");
+        System.out.println("Digite seu nome aventureiro!");
+        name = read.next();
+
+        System.out.println("Certo, " + name + " agora escolha uma quest");
+        System.out.println("1 - Catelo do mago");
+        System.out.println("2 - Masmorra do dragão");
+        quest = read.nextInt();
+        switch(quest){
+            case 1:
+                System.out.println("Quest disponível apenas no código "
+                        + "do Henrique Oliveira");
+                System.exit(0);
+            case 2:
+                if(classe == 1){
+                   System.out.println("Quest acessível somente para guerreiro");
+                   System.exit(0);
+                }
+                System.out.println("Escondida em meio a selva você encontra uma masmorra");
+                System.out.println("");
+                System.out.println("Ao entrar na masmorra, repleta de insetos e bichos possuidos");
+                System.out.println("No fundo do enorme hall encontra duas portas.");
+                System.out.println("");
+                System.out.println("Direita e esquerda");
+                System.out.println("");
+                System.out.println("Digite 1 para direita e 2 para esquerda");
+                int portas = read.nextInt();
+                switch(portas){
+                    case 1:
+                System.out.println("Você escolheu a porta da direita!");
+                System.out.println("Bichos te atacam");
+                //========== dado para dano
+                int dadog = (int) (Math.random() * 11);//dado guerreiro
+                if(dadog == 0){
+                dadog++;
+                }
+                dadog = dadog + 2;
+                HP = HP - dadog;
+                System.out.println("----------------------------");
+                System.out.println("*Você tem " + HP + " de HP*");
+                System.out.println("----------------------------");
+                // ===========
+                System.out.println("Você revida e os mata.\n" +
+                "Vê um buraco no meio da parede");
+                System.out.println("Algo brilha, você se aproxima e encontra "
+                        + "uma poção com 5 de HP");
+                HP = 5 + HP;
+                System.out.println("----------------------------");
+                System.out.println("*Você tem " + HP + " de HP*");
+                System.out.println("----------------------------");
+                System.out.println("Caminhando pelo ambiente e nota uma corda em");
+                System.out.print(" meio um buraco no chão");
+                System.out.println("resolve descer, mal enxerga ao redor");
+                System.out.println("ouve barulhos assustadores, tudo muito suspeito.");
+                System.out.println("");
+                System.out.println("Quando se aproxima do final do pavimento,");
+                System.out.println("aranhas tomam seu corpo. Felizmente quando"); 
+                System.out.println("você aproxima a tocha acesa elas pegam fogo.");
+                System.out.println("E Sua roupa também!");
+                System.out.println("");
+                System.out.println("Por perto vê uma escadaria, ouve um estrondo.");
+                System.out.println("É o Dragão Balrog, que nota facilmente sua presença e o ataca");
+                //========== dado para dano
+                dadog = (int) (Math.random() * 11);//dado guerreiro
+                if(dadog == 0){
+                dadog++;
+                }
+                dadog = dadog + 2;
+                HP = HP - dadog;
+                System.out.println("----------------------------");
+                System.out.println("*Você tem " + HP + " de HP*");
+                System.out.println("----------------------------");
+                // ===========
+                System.out.println("Sorrateiramente revida o ataque"); 
+                System.out.println("cortando sua perna esquerda.");
+                System.out.println("");
+                System.out.println("Com dificuldades para se locomover");
+                System.out.println("você sai de perto dele facilmente;");
+                System.out.println("");
+                System.out.println("Olha pro teto e nota um enorme candelábrio");
+                System.out.println("por perto há uma corda que segura o mesmo no teto");
+                System.out.println("Você consegue solta-la e acerta em cheio o dragão, que agora foi morto.");
+                        System.out.println("--------------------------------");
+                        System.out.println("Parabéns! você cumpriu a quest!!");
+                        break;
+                    
+                    case 2:
+                        System.out.println("Você escolheu a porta da esquerda!");
+                        System.out.println("");
+                        
+                        System.out.println("Você cai em meio de uma armadilha!");
+                        //========== dado para dano
+                    dadog = (int) (Math.random() * 11);//dado guerreiro
+                    if(dadog == 0){
+                    dadog++;
+                    }
+                    dadog = dadog + 2;
+                    HP = HP - dadog;
+                    System.out.println("----------------------------");
+                    System.out.println("*Você tem " + HP + " de HP*");
+                    System.out.println("----------------------------");
+                    // ===========
+                        System.out.println("Com muito esforço consegue se livrar, mas fica fadigado.");
+                        System.out.println("");
+                        System.out.println("Quando se livra, surgem mobs por uma fresta.");
+                        System.out.println("Os mesmos causam tremores no chão e você corre, o chão desaba.");
+                        System.out.println("");
+                        System.out.println("Observa o local e nota uma escada em meio canto das paredes;");
+                        System.out.println("Resolve subir, o local é claro e ouve barulhos nada agradáveis.");
+                        System.out.println("");
+                        System.out.println("Quando se aproxima, encontra um baú escondido, cheio de velharias;");
+                        System.out.println("Era bom demais para ser verdade...");
+                        System.out.println("No meio das velharias está uma chave, você a leva consigo.");
+                        System.out.println("");
+                        System.out.println("Olhando aos redores da sala, se depara com uma porta com fechadura.");
+                        System.out.println("sua chave consegue abrir a porta, um estrondo ao redor.");
+                        System.out.println("É o Dragão Balrog, que nota facilmente sua presença e o ataca");
+                //========== dado para dano
+                dadog = (int) (Math.random() * 11);//dado guerreiro
+                if(dadog == 0){
+                dadog++;
+                }
+                dadog = dadog + 2;
+                HP = HP - dadog;
+                System.out.println("----------------------------");
+                System.out.println("*Você tem " + HP + " de HP*");
+                System.out.println("----------------------------");
+                // ===========
+                System.out.println("Sorrateiramente revida o ataque"); 
+                System.out.println("cortando sua perna esquerda.");
+                System.out.println("");
+                System.out.println("Com dificuldades para se locomover");
+                System.out.println("você sai de perto dele facilmente;");
+                System.out.println("");
+                System.out.println("Olha pro teto e nota um enorme candelábrio");
+                System.out.println("por perto há uma corda que segura o mesmo no teto");
+                System.out.println("Você consegue solta-la e acerta em cheio o dragão, que agora foi morto.");
+                        System.out.println("--------------------------------");
+                        System.out.println("Parabéns! você cumpriu a quest!!");
+                        break;   
+                }
+                break;
+        }
+    }
+    }    
